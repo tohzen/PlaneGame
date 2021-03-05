@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <title>1942 Game</title>
+            <link rel="stylesheet" type="text/css" href="/plane.css">
+        </head>
+        <body>
+            <div id='container'>
+                <div id='hero' style='top:300px; left:300px;'></div>
+                <div id='enemies'>
+                    <div class='enemy1' style='top:100px; left:100px;'></div>
+                    <div class='enemy1' style='top:100px; left:200px;'></div>
+                    <div class='enemy1' style='top:100px; left:300px;'></div>
+                    <div class='enemy1' style='top:100px; left:400px;'></div>
+                </div>
+                <div id='bullets'>
+                    <div class='bullet' style='top:150px; left:200px;'></div>
+                    <div class='bullet' style='top:250px; left:200px;'></div>
+                    <div class='bullet' style='top:350px; left:200px;'></div>
+                    <div class='bullet' style='top:450px; left:200px;'></div>
+                </div>	
+            </div>
+        
+            <div id='score'>100</div>
+        
+            1. display the hero- good
+            2. move hero -good
+            3. display enemies -
+            4. move enemies -
+            5. spacebar = hero shoot bullet -
+            6. http://learn.codingdojo.com/m/2/6858/37286 < link. start at 14:20 in video 
+            
+        
+        <script>
+            var hero = {
+                x: 300,
+                y: 300
+            }
+
+            var enemies = [{x:50, y:50}, {x:250, y:50}, {x:450, y:50}];
+
+
+            function displayHero() {
+                document.getElementById('hero').style['top'] = hero.y + "px";
+                document.getElementById('hero').style['left'] = hero.x + "px";
+            }
+
+            function displayEnemies() {
+                for(var i = 0; i < enemies.length; i++) {
+
+                }
+            }
+
+            document.onkeydown = function(e) {
+                console.log(e.keyCode);
+                if(e.keyCode == 37) {
+                    hero.x -= 10;
+                }  else if(e.keyCode == 39){
+                    hero.x += 10;
+                }
+                if(e.keyCode == 38) {
+                    hero.y -= 10;
+                }  else if(e.keyCode == 40){
+                    hero.y += 10;
+                }
+                
+                displayHero();
+            }
+
+            displayHero();
+
+
+        
+        </script>
+        
+        </body>
+        </html>
